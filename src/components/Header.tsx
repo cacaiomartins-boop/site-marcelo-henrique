@@ -53,9 +53,9 @@ export default function Header({ t }: { t: Content }) {
             </span>
           </a>
 
-          <nav aria-label="Principal" className="hidden items-center gap-8 lg:flex xl:gap-10">
+          <nav aria-label="Principal" className="hidden items-center gap-6 lg:flex xl:gap-9">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="u-link text-[0.9rem] opacity-85 transition-opacity hover:opacity-100">
+              <a key={l.href} href={l.href} className="u-link whitespace-nowrap text-[0.9rem] opacity-85 transition-opacity hover:opacity-100">
                 {l.label}
               </a>
             ))}
