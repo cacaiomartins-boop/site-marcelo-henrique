@@ -15,9 +15,8 @@
       (function () {
         try {
           var q = location.search;
-          var reduz = matchMedia("(prefers-reduced-motion: reduce)").matches && q.indexOf("motion=1") < 0;
           var visto = localStorage.getItem("intro-visto") === "1";
-          if (!reduz && (!visto || q.indexOf("intro=1") >= 0)) document.documentElement.classList.add("js-intro");
+          if (!visto || q.indexOf("intro=1") >= 0) document.documentElement.classList.add("js-intro");
         } catch (e) {}
       })();
     </script>

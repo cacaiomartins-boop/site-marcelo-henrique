@@ -17,6 +17,7 @@ export function initAnimations() {
   const ctx = gsap.context(() => {
     // Sem animação: tudo visível.
     if (reduceMotion()) {
+      introSuave();
       gsap.set(SHOW_ALL, { autoAlpha: 1 });
       gsap.set("[data-tree-hero],[data-footer-tree]", { clipPath: "none" });
       cleanups.push(headerBehavior(false));
@@ -31,6 +32,22 @@ export function initAnimations() {
     cleanups.forEach((fn) => fn());
     ctx.revert();
   };
+}
+
+/** Para quem pede "reduzir movimento": a marca fica parada um instante e some com um fade (sem deslocamentos). */
+function introSuave() {
+  const root = document.documentElement;
+  const el = document.getElementById("intro");
+  if (!el || !root.classList.contains("js-intro")) return;
+  try {
+    localStorage.setItem("intro-visto", "1");
+  } catch {
+    /* ignora */
+  }
+  gsap.set(".intro-tree", { clipPath: "none" });
+  gsap.set(".intro-nome", { autoAlpha: 1 });
+  gsap.set(".intro-sub", { autoAlpha: 0.7 });
+  gsap.to(el, { autoAlpha: 0, duration: 0.6, delay: 1.4, ease: "none", onComplete: () => root.classList.remove("js-intro") });
 }
 
 /** Abertura: a árvore cresce, o nome aparece e a tela sobe. Devolve após quantos segundos o topo deve entrar. */
