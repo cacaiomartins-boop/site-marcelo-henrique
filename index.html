@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Anti-flash: o CSS só esconde os blocos animados se o JS estiver rodando.
+      // Se o JS demorar ou falhar, o tempo limite libera tudo.
+      document.documentElement.classList.add("js-motion");
+      window.__motionTimer = setTimeout(function () {
+        document.documentElement.classList.remove("js-motion");
+      }, 4500);
+    </script>
+
+    <title>Psicólogo on-line para adultos | Marcelo Oliveira</title>
+    <meta
+      name="description"
+      content="Psicólogo on-line para adultos. Terapia fenomenológico-existencial, com escuta e respeito à sua história. Marcelo Oliveira, CRP 06/186112."
+    />
+    <meta name="author" content="Marcelo Henrique de Oliveira" />
+    <meta name="theme-color" content="#f4efe0" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <link rel="preload" as="image" href="/img/arvore.webp" type="image/webp" crossorigin="anonymous" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Marcelo Oliveira · Psicólogo on-line" />
+    <meta
+      property="og:description"
+      content="Um espaço para compreender o que você está vivendo. Atendimento psicológico on-line para adultos."
+    />
+    <meta property="og:image" content="/img/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "#marcelo",
+            "name": "Marcelo Henrique de Oliveira",
+            "alternateName": "Marcelo Oliveira",
+            "jobTitle": "Psicólogo",
+            "email": "mailto:marcelohenriqueoliveira@gmail.com",
+            "telephone": "+5511967930606",
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade de São Paulo (USP)" },
+            "hasCredential": "CRP 06/186112",
+            "knowsAbout": ["Psicologia clínica", "Fenomenologia", "Orientação profissional"],
+            "sameAs": ["https://www.doctoralia.com.br/perfil/marcelo-henrique-de-oliveira-3"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Marcelo Oliveira · Psicólogo",
+            "description": "Atendimento psicológico on-line para adultos, na perspectiva fenomenológico-existencial.",
+            "areaServed": { "@type": "Country", "name": "Brasil" },
+            "availableLanguage": "pt-BR",
+            "founder": { "@id": "#marcelo" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: sans-serif">
+        Marcelo Oliveira, psicólogo (CRP 06/186112). Atendimento psicológico on-line para adultos. WhatsApp: (11)
+        96793-0606.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
