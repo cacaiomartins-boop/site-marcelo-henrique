@@ -9,7 +9,17 @@
       document.documentElement.classList.add("js-motion");
       window.__motionTimer = setTimeout(function () {
         document.documentElement.classList.remove("js-motion");
+        document.documentElement.classList.remove("js-intro");
       }, 4500);
+      // Tela de abertura: só na primeira visita (?intro=1 força, para testar).
+      (function () {
+        try {
+          var q = location.search;
+          var reduz = matchMedia("(prefers-reduced-motion: reduce)").matches && q.indexOf("motion=1") < 0;
+          var visto = localStorage.getItem("intro-visto") === "1";
+          if (!reduz && (!visto || q.indexOf("intro=1") >= 0)) document.documentElement.classList.add("js-intro");
+        } catch (e) {}
+      })();
     </script>
 
     <title>Psicólogo on-line para adultos | Marcelo Oliveira</title>
@@ -68,6 +78,13 @@
     </script>
   </head>
   <body>
+    <div id="intro" aria-hidden="true">
+      <div class="intro-inner">
+        <div class="tree intro-tree"></div>
+        <p class="intro-nome">Marcelo Oliveira</p>
+        <p class="intro-sub">Psicólogo</p>
+      </div>
+    </div>
     <div id="root"></div>
     <noscript>
       <p style="padding: 2rem; font-family: sans-serif">

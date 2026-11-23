@@ -33,10 +33,46 @@ export function initAnimations() {
   };
 }
 
+/** Abertura: a árvore cresce, o nome aparece e a tela sobe. Devolve após quantos segundos o topo deve entrar. */
+function playIntro(cleanups: Array<() => void>): number {
+  const root = document.documentElement;
+  const el = document.getElementById("intro");
+  if (!el || !root.classList.contains("js-intro")) return 0;
+
+  try {
+    localStorage.setItem("intro-visto", "1");
+  } catch {
+    /* sem armazenamento: apenas mostra de novo na próxima visita */
+  }
+  window.__lenis?.stop();
+  root.style.overflow = "hidden";
+
+  const fim = () => {
+    root.classList.remove("js-intro");
+    root.style.overflow = "";
+    window.__lenis?.start();
+    ScrollTrigger.refresh();
+  };
+
+  const tl = gsap.timeline({ onComplete: fim });
+  tl.to(".intro-tree", { clipPath: "inset(0% 0% 0% 0%)", duration: 1.7, ease: "breath" }, 0.15);
+  tl.fromTo(".intro-nome", { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 1 }, 0.9);
+  tl.fromTo(".intro-sub", { autoAlpha: 0, y: 8 }, { autoAlpha: 0.7, y: 0, duration: 1 }, 1.1);
+  tl.to(".intro-inner", { autoAlpha: 0, y: -14, duration: 0.6, ease: "power2.in" }, 2.5);
+  tl.to(el, { yPercent: -100, duration: 1, ease: "power3.inOut" }, 2.8);
+  (window as unknown as { __introTl?: gsap.core.Timeline }).__introTl = tl;
+  // Só para a animação; a classe js-intro permanece, para o React (modo dev) poder reiniciar a abertura.
+  cleanups.push(() => tl.kill());
+  return 3.3;
+}
+
 function animate(cleanups: Array<() => void>) {
   {
+    // ---------- Tela de abertura (primeira visita) ----------
+    const d = playIntro(cleanups);
+
     // ---------- Entrada do topo ----------
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ delay: d });
     tl.fromTo(
       "[data-tree-hero]",
       { clipPath: "inset(100% 0% 0% 0%)" },
@@ -66,7 +102,7 @@ function animate(cleanups: Array<() => void>) {
             transformOrigin: "0% 100%",
             duration: 1.3,
             stagger: 0.12,
-            delay: 0.35,
+            delay: 0.35 + d,
           });
         },
       });
