@@ -17,6 +17,13 @@ export type Content = {
     texto: string;
     textoExtra: string;
   };
+  opinioes: {
+    titulo: string;
+    nota: string;
+    verTodas: string;
+    total: number;
+    itens: { nome: string; data: string; texto: string[] }[];
+  };
   rodape: { frase: string; emergencia: string; verificar: string };
 };
 
@@ -82,11 +89,100 @@ export const pt: Content = {
       { rotulo: "Duração", valor: "Cerca de 50 minutos" },
       { rotulo: "Frequência", valor: "Geralmente semanal" },
       { rotulo: "Idioma", valor: "Português" },
+      { rotulo: "Valor da sessão", valor: "R$ 220" },
     ],
     texto:
       "O primeiro encontro é uma oportunidade para nos conhecermos e percebermos se a proposta de trabalho faz sentido para você.",
     // TODO: confirmar com o Marcelo. Vem da bio dele no Doctoralia ("primeira conversa experimental, sem custo").
     textoExtra: "A primeira conversa é experimental e não tem custo.",
+  },
+  // Opiniões copiadas do perfil do Doctoralia, sem alterações (texto, nome/abreviação e data originais).
+  opinioes: {
+    titulo: "Opiniões de *quem já passou por aqui.*",
+    nota: "Avaliações reproduzidas, sem alterações, do meu perfil no Doctoralia.",
+    verTodas: "Ver todas as opiniões no Doctoralia",
+    total: 27,
+    itens: [
+      {
+        nome: "Leonardo goes rodrigues",
+        data: "24 de setembro de 2026",
+        texto: [
+          "Marcelo e um excelente psicologo! Muito atencioso, prestativo e inteligente, sabe abordar os temas de uma maneira muito leve e inteligente",
+        ],
+      },
+      {
+        nome: "Gustavo",
+        data: "17 de agosto de 2026",
+        texto: [
+          "As sessões com o Marcelo tem me ajudado bastante a lidar com a ansiedade, além de me ajudar a entrar em contato comigo mesmo e com o sentido das cosias na minha vida. Ele é muito acolhedor e atencioso, recomendo muito",
+        ],
+      },
+      {
+        nome: "G.B.",
+        data: "23 de junho de 2026",
+        texto: [
+          "O Marcelo constrói um espaço de acolhimento e presença, o que faz com que eu me sinta à vontade para falar abertamente sobre minhas questões, mesmo que elas não estejam completamente \"prontas\" e organizadas para serem ditas. Esse trabalho de escuta e presença ativa tem feito com que eu mesma me abra para descobrir mais de mim e entender o que já não me cabe mais.",
+        ],
+      },
+      {
+        nome: "Gabriel Rocha",
+        data: "5 de junho de 2026",
+        texto: [
+          "Marcelo foi meu psicólogo por quase 6 meses e uma presença essencial na minha caminhada. Ele é um querido!! Muito acolhedor e respeitoso. Sua abordagem me ajudou bastante a compreender os mais diversos aspectos da minha personalidade e dar nome ao que eu sentia, além de conseguir me enxergar com mais profundidade. Em minhas crises sempre fui amparado e consegui me reerguer com o apoio dele. Apenas precisei interromper o acompanhamento, não por falta de confiança ou por algo negativo, muito pelo contrário. Mas porque decidi experimentar outra abordagem terapêutica, mais voltada para manejo do Borderline e controle das minhas crises. Sou muito grato pelo cuidado e o recomendo com muito carinho.",
+        ],
+      },
+      {
+        nome: "DCN",
+        data: "27 de março de 2026",
+        texto: [
+          "Comecei a terapia com o Marcelo sem saber muito o que esperar, mas me surpreendi com a forma como as sessões foram me ajudando a organizar coisas que antes pareciam confusas.",
+          "Ele tem um jeito muito claro e ao mesmo tempo cuidadoso de conduzir, o que faz com que a conversa não fique perdida, mas também não seja forçada. Aos poucos, fui percebendo mudanças reais no meu dia a dia, principalmente na forma como lido com situações difíceis.",
+          "Hoje vejo a terapia como um investimento importante pra mim. Recomendo pra quem quer um acompanhamento sério, que realmente faça diferença ao longo do tempo.",
+        ],
+      },
+      {
+        nome: "Elena",
+        data: "24 de março de 2026",
+        texto: [
+          "Fazer terapia com o Marcelo tem sido uma experiência muito diferente do que eu já tinha vivido antes. Desde o começo, senti que ele não tenta encaixar a gente em explicações prontas, mas realmente escuta com atenção e interesse genuíno pelo que estamos vivendo.",
+          "Ao longo das sessões, fui me sentindo mais à vontade para falar no meu tempo, sem pressão ou julgamento. Ele tem uma forma muito cuidadosa de conduzir, ajudando a gente a entender melhor o que está sentindo e como as coisas vão se dando na nossa vida, sem respostas simplistas.",
+          "É um espaço que acolhe, mas que também traz reflexões importantes, que vão fazendo sentido aos poucos. Recomendo principalmente para quem busca uma terapia mais profunda, que respeite o tempo de cada um e ajude a olhar para si com mais clareza.",
+        ],
+      },
+      {
+        nome: "Alessandra",
+        data: "13 de janeiro de 2026",
+        texto: [
+          "Marcelo abriu meus olhos sobre terapia! Me sinto muito livre para falar sobre minhas questões desde a primeira consulta, ele é ótimo!",
+        ],
+      },
+      {
+        nome: "V.F.S",
+        data: "8 de agosto de 2025",
+        texto: [
+          "Profissional habilidoso em tratar assuntos relacionados a saúde emocional. Mostra-se com extrema paciência durante as consultas, atendimento humanizado e sensível. Recomendo para todos.",
+        ],
+      },
+      {
+        nome: "Jonas Maciel",
+        data: "6 de agosto de 2025",
+        texto: [
+          "EXCEPCIONAL !!",
+          "Ao longo de aproximadamente 4 anos faço acompanhamento com Marcelo.",
+          "Pra além de um simples profissional ele se mostra extremamente competente, inteligente e acima de tudo, humano.",
+          "Nossas consultas pulam para fora do espectro de uma simples conversa, mas pairam dentro da construção um espaço de aprendizado, questionamento, reflexão, auto conhecimento, crescimento mental, profissional e intelectual.",
+          "Neste espaço falamos e questionamos sobre todos meus aspectos individuais, como TDAH, Dislexia, bissexualidade, traumas familiares e de infância, ansiedades, medos, problemas familiares, problemas profissionais etc... Enfim, me sinto livre pra conversar sobre como me sinto e o por que me sinto de tal forma.",
+          "Ele vem me auxiliando a enxergar as diversas perspectivas da vida em diferentes expertos, do mais simples ao mais complexo, abordando as diferentes historias pelas quais passo e passei, para poder enxergar a vida de uma forma mais linda.",
+        ],
+      },
+      {
+        nome: "Luiz Felipe Lazzarotto",
+        data: "8 de julho de 2025",
+        texto: [
+          "O Marcelo é um psicólogo maravilhoso pra mim, me ajuda muito! Fiquei 8 anos fazendo psicanálise e mudar para a linha da Fenomenologia com ele foi uma grata e transformadora surpresa. Agradeço e indico muitíssimo o Marcelo por sua competência, profissionalismo e sensibilidade ímpares :)",
+        ],
+      },
+    ],
   },
   rodape: {
     frase: "Todo caminho começa por poder *habitar a si mesmo.*",

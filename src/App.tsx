@@ -8,6 +8,7 @@ import Trabalho from "./components/Trabalho";
 import ParaQuem from "./components/ParaQuem";
 import SobreMim from "./components/SobreMim";
 import ComoFunciona from "./components/ComoFunciona";
+import Opinioes from "./components/Opinioes";
 import Rodape from "./components/Rodape";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 
@@ -38,6 +39,7 @@ export default function App() {
         <ParaQuem t={t} />
         <SobreMim t={t} />
         <ComoFunciona t={t} />
+        <Opinioes t={t} />
       </main>
       <Rodape t={t} />
       <WhatsAppFloat />

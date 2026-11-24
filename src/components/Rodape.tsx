@@ -4,7 +4,7 @@ import { Em, IconMail, IconWhatsApp } from "./ui";
 
 export default function Rodape({ t }: { t: Content }) {
   return (
-    <div className="bg-ivory">
+    <div className="bg-paper">
       <footer
         data-theme="dark"
         data-footer-panel

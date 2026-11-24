@@ -46,9 +46,9 @@ export default function Header({ t }: { t: Content }) {
         className="group fixed inset-x-0 top-0 z-50 text-ink transition-[background-color,box-shadow,color,backdrop-filter] duration-700 data-[scrolled=true]:bg-paper/85 data-[scrolled=true]:shadow-[0_1px_0_rgba(41,78,89,0.14)] data-[scrolled=true]:backdrop-blur-xl data-[tone=dark]:text-ivory data-[tone=dark]:data-[scrolled=true]:bg-teal-deep/80 data-[tone=dark]:data-[scrolled=true]:shadow-[0_1px_0_rgba(235,229,208,0.18)] data-[menu-open=true]:!bg-paper data-[menu-open=true]:!text-ink"
       >
         <div className="container-site flex h-[4.25rem] items-center justify-between gap-6 lg:h-[4.75rem]">
-          <a href="#inicio" aria-label={`${clinic.nome}, ${clinic.profissao}. Ir para o início`} className="block leading-none lg:flex lg:items-baseline lg:gap-4">
-            <span className="block whitespace-nowrap font-serif text-[1.05rem] uppercase tracking-[0.14em] sm:text-[1.15rem]">{clinic.nome}</span>
-            <span className="mt-1.5 block text-[0.6rem] font-medium uppercase tracking-[0.34em] opacity-70 lg:mt-0 lg:whitespace-nowrap lg:border-l lg:border-current/30 lg:pl-4">
+          <a href="#inicio" aria-label={`${clinic.nome}, ${clinic.profissao}. Ir para o início`} className="block leading-none">
+            <span className="block whitespace-nowrap font-serif text-[1.2rem] uppercase tracking-[0.12em] sm:text-[1.35rem] xl:text-[1.6rem]">{clinic.nome}</span>
+            <span className="mt-2 block whitespace-nowrap text-[0.64rem] font-medium uppercase tracking-[0.34em] opacity-75 xl:text-[0.72rem]">
               {clinic.profissao}
             </span>
           </a>
@@ -64,7 +64,7 @@ export default function Header({ t }: { t: Content }) {
           <div className="flex items-center gap-3">
             <WhatsAppButton
               href={whatsappUrl(mensagens.header)}
-              className="!hidden !h-11 !px-5 !text-[0.85rem] sm:!inline-flex group-data-[tone=dark]:!bg-ivory group-data-[tone=dark]:!text-teal-deep group-data-[tone=dark]:!shadow-none"
+              className="!hidden !h-11 !px-5 !text-[0.85rem] sm:!inline-flex lg:!hidden xl:!inline-flex group-data-[tone=dark]:!bg-ivory group-data-[tone=dark]:!text-teal-deep group-data-[tone=dark]:!shadow-none"
             >
               {t.botoes.agendar}
             </WhatsAppButton>

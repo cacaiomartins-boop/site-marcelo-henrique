@@ -13,7 +13,7 @@ export default function ComoFunciona({ t }: { t: Content }) {
 
         <dl
           data-stagger
-          className="mt-[clamp(2rem,6svh,3.5rem)] grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8"
+          className="mt-[clamp(2rem,6svh,3.5rem)] grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-6"
         >
           {c.itens.map((item) => (
             <div key={item.rotulo} data-reveal-item className="border-t border-teal/25 pt-5">

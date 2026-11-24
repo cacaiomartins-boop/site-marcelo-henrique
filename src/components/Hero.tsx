@@ -42,18 +42,24 @@ export default function Hero({ t }: { t: Content }) {
             </a>
           </div>
 
-          <p data-hero-in className="mt-5 text-[0.85rem] text-muted sm:text-[0.9rem] lg:mt-[clamp(1.25rem,3.4svh,2.25rem)]">
-            {clinic.nomeCompleto} · {clinic.registro}
-          </p>
         </div>
       </div>
 
-      {/* A árvore do cartão: cresce de baixo para cima */}
-      <div
-        data-tree-hero
-        aria-hidden="true"
-        className="tree mt-6 text-teal [--h:min(40svh,23rem)] lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:[--h:min(86svh,52vw)] xl:[--h:min(86svh,56vw)]"
-      />
+      {/* A árvore do cartão: cresce de baixo para cima. A identificação fica no vazio ao lado do tronco. */}
+      <div className="relative mt-6 w-full text-teal [--h:min(40svh,23rem)] lg:absolute lg:bottom-0 lg:left-0 lg:mt-0 lg:w-fit lg:[--h:min(86svh,52vw)] xl:[--h:min(86svh,56vw)]">
+        <div data-tree-hero aria-hidden="true" className="tree" />
+        <p
+          data-hero-in
+          className="absolute bottom-6 right-5 text-right lg:bottom-[clamp(0.9rem,2.4svh,1.6rem)] whitespace-nowrap lg:left-[31%] lg:right-auto lg:text-left"
+        >
+          <span className="block font-serif text-[1rem] leading-tight text-ink lg:text-[clamp(0.95rem,min(1.7vw,2.6svh),1.35rem)]">
+            {clinic.nomeCompleto}
+          </span>
+          <span className="mt-1.5 block text-[0.66rem] font-medium uppercase tracking-[0.2em] text-teal lg:text-[clamp(0.62rem,0.95vw,0.72rem)] lg:tracking-[0.16em]">
+            Psicólogo <span aria-hidden="true">|</span> {clinic.registro}
+          </span>
+        </p>
+      </div>
     </section>
   );
 }
