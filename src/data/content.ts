@@ -5,38 +5,39 @@
  */
 export type Content = {
   idioma: string;
-  menu: { trabalho: string; paraQuem: string; sobreMim: string; comoFunciona: string };
-  botoes: { agendar: string; contato: string; verApresentacao: string };
-  hero: { titulo: string; texto1: string; texto2: string; etiqueta: string };
-  trabalho: { titulo: string; paragrafos: string[] };
-  paraQuem: { titulo: string; intro: string; lista: string[]; fechamento: string };
+  menu: { terapia: string; sobreMim: string; opinioes: string; comoFunciona: string };
+  botoes: { agendar: string; agendarSua: string; contato: string; verApresentacao: string };
+  hero: { titulo: string; texto1: string; texto2: string };
+  terapia: { titulo: string; paragrafos: string[]; listaTitulo: string; lista: string[]; fechamento: string };
   sobreMim: { titulo: string; paragrafos: string[]; video: { titulo: string; duracao: string } };
   comoFunciona: {
     titulo: string;
+    intro: string;
     itens: { rotulo: string; valor: string }[];
     texto: string;
-    textoExtra: string;
   };
   opinioes: {
     titulo: string;
     nota: string;
-    verTodas: string;
-    total: number;
+    verMais: string;
+    verMenos: string;
+    iniciais: number;
     itens: { nome: string; data: string; texto: string[] }[];
   };
-  rodape: { frase: string; emergencia: string; verificar: string };
+  rodape: { frase: string; cargo: string; emergencia: string; verificar: string };
 };
 
 export const pt: Content = {
   idioma: "pt-BR",
   menu: {
-    trabalho: "Sobre o trabalho",
-    paraQuem: "Para quem",
+    terapia: "Sobre a terapia",
     sobreMim: "Sobre mim",
+    opinioes: "Opiniões",
     comoFunciona: "Como funciona",
   },
   botoes: {
     agendar: "Agende uma conversa",
+    agendarSua: "Agende sua conversa",
     contato: "Entre em contato",
     verApresentacao: "Assistir à apresentação",
   },
@@ -44,64 +45,55 @@ export const pt: Content = {
     titulo: "Um espaço para *compreender o que você está vivendo.*",
     texto1:
       "A terapia pode ser um lugar para olhar com mais cuidado para si mesmo, compreender suas experiências e descobrir outras possibilidades de estar no mundo.",
-    texto2:
-      "Meu trabalho é construído a partir da escuta, do diálogo e do respeito à singularidade de cada pessoa.",
-    etiqueta: "Atendimento psicológico on-line para adultos",
+    texto2: "Um espaço de escuta e diálogo, construído a partir da sua própria experiência.",
   },
-  trabalho: {
+  terapia: {
     titulo: "Uma terapia que parte da *sua experiência.*",
     paragrafos: [
-      "Meu trabalho segue a perspectiva fenomenológico-existencial, que compreende cada pessoa a partir de sua história, suas relações e de sua maneira própria de viver o mundo.",
-      "Na terapia, construímos juntos um espaço em que seja possível falar livremente sobre aquilo que você está vivendo, inclusive sobre questões que ainda são difíceis de compreender ou colocar em palavras.",
-      "Mais do que encontrar respostas prontas, buscamos compreender sua experiência e explorar novas possibilidades de se relacionar com a própria vida.",
+      "Meu trabalho segue a perspectiva fenomenológico-existencial, que compreende cada pessoa a partir de sua maneira singular de viver e se relacionar com o mundo.",
+      "Na terapia, buscamos compreender aquilo que você está vivendo, suas relações, escolhas e questões, sem partir de respostas prontas.",
     ],
-  },
-  paraQuem: {
-    titulo: "Um espaço para olhar para *aquilo que importa.*",
-    intro:
-      "O acompanhamento é destinado a adultos que desejam compreender melhor suas experiências, atravessar momentos difíceis ou refletir sobre os caminhos que têm construído. Podemos conversar sobre questões como:",
+    listaTitulo: "O acompanhamento pode envolver questões como:",
     lista: [
       "Ansiedade e sofrimento emocional",
-      "Insegurança e autoestima",
       "Relacionamentos e vínculos afetivos",
       "Mudanças e transições de vida",
-      "Escolhas, projetos e decisões",
       "Identidade e autoconhecimento",
-      "Sensação de vazio, solidão ou falta de sentido",
+      "Escolhas e projetos de vida",
+      "Solidão e falta de sentido",
     ],
     fechamento:
-      "Você não precisa chegar sabendo exatamente o que quer trabalhar. Podemos começar justamente pelo que está presente na sua vida hoje.",
+      "Você não precisa chegar sabendo exatamente o que quer trabalhar. Podemos começar pelo que está presente na sua vida hoje.",
   },
   sobreMim: {
     titulo: "Prazer, *sou Marcelo.*",
     paragrafos: [
-      "Sou psicólogo, formado pela Universidade de São Paulo (USP), com experiência em atendimento clínico e passagem por instituições como o Hospital Universitário da USP e o Instituto de Psiquiatria do Hospital das Clínicas.",
-      "Desenvolvo meu trabalho a partir da fenomenologia, uma perspectiva que valoriza a maneira singular como cada pessoa experimenta e compreende sua própria existência.",
-      "Acredito na importância de construir um espaço de confiança, acolhimento e diálogo, em que você possa se expressar com liberdade, sem precisar chegar com tudo organizado ou ter respostas para todas as questões.",
+      "Sou psicólogo, formado pela Universidade de São Paulo (USP), e também graduado em Administração pela mesma universidade.",
+      "Tenho experiência em atendimento clínico e passagem por instituições como o Hospital Universitário da USP e o Instituto de Psiquiatria do Hospital das Clínicas.",
     ],
     video: { titulo: "Conheça meu jeito de conversar", duracao: "1 min 26 s" },
   },
   comoFunciona: {
-    titulo: "Como *funciona.*",
+    titulo: "Como funciona *o acompanhamento?*",
+    intro: "Os atendimentos são realizados de forma on-line, em português, espanhol ou inglês, e destinados a adultos.",
     itens: [
-      { rotulo: "Modalidade", valor: "Atendimento on-line" },
+      { rotulo: "Modalidade", valor: "On-line" },
       { rotulo: "Público", valor: "Adultos" },
-      { rotulo: "Duração", valor: "Cerca de 50 minutos" },
+      { rotulo: "Duração", valor: "Aproximadamente 50 minutos" },
       { rotulo: "Frequência", valor: "Geralmente semanal" },
-      { rotulo: "Idioma", valor: "Português" },
-      { rotulo: "Valor da sessão", valor: "R$ 220" },
+      { rotulo: "Idiomas", valor: "Português, espanhol e inglês" },
+      { rotulo: "Investimento", valor: "R$ 220 / € 50 por sessão" },
     ],
     texto:
-      "O primeiro encontro é uma oportunidade para nos conhecermos e percebermos se a proposta de trabalho faz sentido para você.",
-    // TODO: confirmar com o Marcelo. Vem da bio dele no Doctoralia ("primeira conversa experimental, sem custo").
-    textoExtra: "A primeira conversa é experimental e não tem custo.",
+      "O primeiro encontro é uma conversa experimental, sem custo, para nos conhecermos e conversarmos sobre o que você busca no acompanhamento.",
   },
   // Opiniões copiadas do perfil do Doctoralia, sem alterações (texto, nome/abreviação e data originais).
   opinioes: {
-    titulo: "Opiniões de *quem já passou por aqui.*",
-    nota: "Avaliações reproduzidas, sem alterações, do meu perfil no Doctoralia.",
-    verTodas: "Ver todas as opiniões no Doctoralia",
-    total: 27,
+    titulo: "O que dizem sobre *o acompanhamento.*",
+    nota: "Avaliações do meu perfil na Doctoralia, reproduzidas sem alterações.",
+    verMais: "Ver mais opiniões",
+    verMenos: "Ver menos opiniões",
+    iniciais: 5,
     itens: [
       {
         nome: "Leonardo goes rodrigues",
@@ -182,10 +174,132 @@ export const pt: Content = {
           "O Marcelo é um psicólogo maravilhoso pra mim, me ajuda muito! Fiquei 8 anos fazendo psicanálise e mudar para a linha da Fenomenologia com ele foi uma grata e transformadora surpresa. Agradeço e indico muitíssimo o Marcelo por sua competência, profissionalismo e sensibilidade ímpares :)",
         ],
       },
+      {
+        nome: "Gabriel Latorre",
+        data: "20 de maio de 2025",
+        texto: [
+          "A terapia, dando certo desta vez, me fez falar coisas e eu mesmo descobrir o que estava certo e errado, o que gostaria de mudar em mim e o que não gostaria. As sessões com o Marcelo são muito leves e agradáveis, e tem dias que até sinto falta de conversar com ele no meio da semana. Acho que deve acontecer porque ele diz muito sobre ser um ambiente onde eu possa falar tudo o que quiser e fazer disso um ambiente confortável. Eu passei a gostar muito de terapia porque nesse 1 ano eu consegui mudar coisas muito importantes na minha vida que eu não imaginava que seria possível. Mas tudo por causa da constância. Uma coisa que eu sinto um pouco de falta é que o Marcelo falasse um pouquinho mais durante as sessões, as vezes um momento de silêncio ou se perguntas muito breves me incomoda um pouco, mas nada que me faça não gostar de fazer terapia. Acho que isso vai de profissional para profissional. Mas de uma forma geral eu gosto muito da terapia e do meu terapeuta, e estou muito satisfeito.",
+        ],
+      },
+      {
+        nome: "Sol Del Carlo",
+        data: "13 de abril de 2025",
+        texto: [
+          "Mesmo sem ter feito um acompanhamento formal, já tive o privilégio de muitas conversas profundas com o Marcelo, e sempre me impressiona a escuta atenta, que me mostra o quanto ele leva a sério cada palavra dita, cada nuance. Ele não fala nada por falar, mas observa, escuta de verdade e enxerga além do óbvio. Sua postura é ética, objetiva e profundamente comprometida com o que faz. Dá pra sentir que cada conversa com ele é um convite à reflexão e ao autoconhecimento, de um jeito claro, direto e respeitoso.",
+        ],
+      },
+      {
+        nome: "G.R",
+        data: "2 de abril de 2025",
+        texto: [
+          "Tenho vivenciado o processo terapêutico com o Marcelo há quase dois anos e só tenho elogios a fazer. Ele é extremamente atencioso e traz reflexões profundas e assertivas, que me fazem pensar e questionar meus próprios comportamentos de maneira construtiva. Recomendo muito para quem busca um psicólogo competente e comprometido com o bem-estar de seus pacientes!",
+        ],
+      },
+      {
+        nome: "Heloisa Alonso",
+        data: "17 de março de 2025",
+        texto: [
+          "Desde a primeira consulta, me senti acolhida e compreendida. Marcelo tem uma abordagem sensível, profissional e extremamente humana. Suas orientações me ajudaram a enxergar questões importantes da minha vida sob uma nova perspectiva, proporcionando crescimento pessoal e bem-estar emocional.",
+        ],
+      },
+      {
+        nome: "Marcos",
+        data: "6 de março de 2025",
+        texto: [
+          "Marcelo é um excelente profissional, dedicado e empático, sempre buscando oferecer o melhor apoio possível. Eu altamente recomendo Marcelo para qualquer pessoa que busque apoio psicológico, pois é um profissional de confiança e um parceiro valioso no caminho para o bem-estar emocional e mental.",
+        ],
+      },
+      {
+        nome: "Gabriel C",
+        data: "5 de março de 2025",
+        texto: [
+          "Marcelo tem uma abordagem muito interessante, conseguiu me deixar muito a vontade nas consultas, sabe ouvir e falar nas horas certas.",
+        ],
+      },
+      {
+        nome: "Paciente",
+        data: "25 de fevereiro de 2025",
+        texto: [
+          "bom, atencioso, dedicado, estudioso e da bons conselhos",
+        ],
+      },
+      {
+        nome: "M.L.",
+        data: "20 de fevereiro de 2025",
+        texto: [
+          "Fui atendido pelo Marcelo e posso dizer que ele é excelente. Desde a primeira consulta, me senti muito à vontade para compartilhar minhas questões e ele soube ouvir com muita empatia. Sua abordagem é muito cuidadosa e ele sempre me ajuda a enxergar as situações de uma forma mais clara, o que tem feito toda a diferença na minha vida. Estou muito satisfeita com o acompanhamento que estou recebendo. Super recomendo!",
+        ],
+      },
+      {
+        nome: "VL",
+        data: "17 de fevereiro de 2025",
+        texto: [
+          "Muito tranquilo e atencioso. Consegue navegar bem a conversa.",
+        ],
+      },
+      {
+        nome: "LMP",
+        data: "12 de fevereiro de 2025",
+        texto: [
+          "Ótimo psicólogo, foi muito atencioso e profissional. Escutou meus problemas e me ajudou a criar confiança para resolver meus desafios com pessoas no trabalho.",
+        ],
+      },
+      {
+        nome: "Eduardo F.",
+        data: "11 de fevereiro de 2025",
+        texto: [
+          "Marcelo é muito atento na escuta, sempre me sinto muito acolhido. Faz perguntas muito boas que me deixam pensativo por um bom tempo.",
+        ],
+      },
+      {
+        nome: "M.S.",
+        data: "7 de fevereiro de 2025",
+        texto: [
+          "me senti muito acolhida e escutada! obrigada dr. marcelo :)",
+        ],
+      },
+      {
+        nome: "D.C",
+        data: "5 de fevereiro de 2025",
+        texto: [
+          "Gostaria de expressar minha profunda gratidão pelo excelente trabalho realizado pelo Marcelo. Desde o início do processo terapêutico, demonstrou profissionalismo, empatia e uma abordagem sensível às minhas necessidades. Sempre atento e acolhedor, criou um ambiente seguro e de confiança, permitindo que eu me sentisse confortável para compartilhar minhas questões.",
+          "Sua capacidade de escuta, compreensão e orientação tem sido essencial para meu crescimento pessoal e emocional. Além disso, a forma como conduz as sessões, com técnicas eficazes e insights valiosos, tem me ajudado a desenvolver novas perspectivas e estratégias para lidar com desafios.",
+          "Recomendo fortemente o trabalho do Marcelo a qualquer pessoa que busca um profissional qualificado e comprometido com o bem-estar dos seus pacientes.",
+        ],
+      },
+      {
+        nome: "Milena Postacchini",
+        data: "4 de fevereiro de 2025",
+        texto: [
+          "Marcelo é um excelente profissional! Da pra sentir que ama seu trabalho, pois tem uma escuta atenciosa e sabe exatamente o que perguntar e como perguntar. Me faz refletir sobre muitas coisas que eu não imaginaria, e me sinto muito a vontade para expor meus pensamentos pois não me sinto julgada e sim ouvida. Já indiquei ele para muitos pacientes meus! Sorte de quem faz essa jornada de autoconhecimento com ele. Obrigada de coração psi!",
+        ],
+      },
+      {
+        nome: "J.J.T.",
+        data: "1 de fevereiro de 2025",
+        texto: [
+          "Excelente profissional! Muito empenhado, paciente e capaz no tratamento das minhas questões. Deixo aqui a minha indicação a todos que estiverem buscando ajuda.",
+        ],
+      },
+      {
+        nome: "B.H.",
+        data: "1 de fevereiro de 2025",
+        texto: [
+          "Marcelo é um profissional ímpar, e tem me ajudado muito nos últimos meses. Já tinha passado por outros profissionais, mas nada supera a compreensão, sensibilidade e escuta que encontrei em nossas sessões. Recomendo!",
+        ],
+      },
+      {
+        nome: "Ariana Souza",
+        data: "1 de fevereiro de 2025",
+        texto: [
+          "O Marcelo consegue trazer com clareza e de forma direta os pontos, as consultas são leves e bem administrada",
+        ],
+      },
     ],
   },
   rodape: {
     frase: "Todo caminho começa por poder *habitar a si mesmo.*",
+    cargo: "Psicólogo | CRP 06/186112",
     emergencia: "Em situação de emergência, ligue 188 (CVV) ou 192 (SAMU).",
     verificar: "Verificar registro no Conselho Federal de Psicologia",
   },

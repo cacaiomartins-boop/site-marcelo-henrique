@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import type { Content } from "../data/content";
-import { clinic } from "../data/clinic";
-import { Em, IconClose, IconPlay } from "./ui";
+import { clinic, mensagens, whatsappUrl } from "../data/clinic";
+import { Em, IconClose, IconPlay, WhatsAppButton } from "./ui";
 
 export default function SobreMim({ t }: { t: Content }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -71,6 +71,9 @@ export default function SobreMim({ t }: { t: Content }) {
                 {p}
               </p>
             ))}
+          </div>
+          <div data-reveal className="mt-8 lg:mt-[clamp(1.5rem,4svh,2.25rem)]">
+            <WhatsAppButton href={whatsappUrl(mensagens.hero)}>{t.botoes.agendar}</WhatsAppButton>
           </div>
         </div>
       </div>

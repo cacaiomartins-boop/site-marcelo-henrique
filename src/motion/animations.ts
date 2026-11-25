@@ -4,7 +4,8 @@ const SHOW_ALL = "[data-reveal],[data-reveal-item],[data-hero-in],[data-split]";
 
 /**
  * Todas as animações do site. Os componentes só marcam os elementos com data-attributes:
- *  data-hero-in / data-hero-title / data-tree-hero  -> entrada do topo
+ *  data-hero-in / data-hero-title  -> entrada do topo
+ *  data-tree-grow  -> árvore que cresce de baixo para cima ao aparecer
  *  data-split      -> título que sobe linha a linha
  *  data-reveal     -> bloco que aparece ao rolar
  *  data-stagger    -> grupo; os filhos [data-reveal-item] entram em sequência
@@ -19,7 +20,7 @@ export function initAnimations() {
     if (reduceMotion()) {
       introSuave();
       gsap.set(SHOW_ALL, { autoAlpha: 1 });
-      gsap.set("[data-tree-hero],[data-footer-tree]", { clipPath: "none" });
+      gsap.set("[data-tree-grow],[data-footer-tree]", { clipPath: "none" });
       cleanups.push(headerBehavior(false));
       return;
     }
@@ -91,13 +92,6 @@ function animate(cleanups: Array<() => void>) {
     // ---------- Entrada do topo ----------
     const tl = gsap.timeline({ delay: d });
     tl.fromTo(
-      "[data-tree-hero]",
-      { clipPath: "inset(100% 0% 0% 0%)" },
-      { clipPath: "inset(0% 0% 0% 0%)", duration: 2.8, ease: "breath" },
-      0,
-    );
-    tl.from("[data-tree-hero]", { scale: 1.07, transformOrigin: "0% 100%", duration: 3.2, ease: "power2.out" }, 0);
-    tl.fromTo(
       "[data-header]",
       { autoAlpha: 0 },
       { autoAlpha: 1, duration: 1.2 },
@@ -131,11 +125,18 @@ function animate(cleanups: Array<() => void>) {
       0.95,
     );
 
-    // Pequeno afastamento da árvore ao rolar o topo
-    gsap.to("[data-tree-hero]", {
-      yPercent: 5,
-      ease: "none",
-      scrollTrigger: { trigger: "#inicio", start: "top top", end: "bottom top", scrub: true },
+    // A árvore da seção "Sobre a terapia" cresce de baixo para cima ao aparecer
+    gsap.utils.toArray<HTMLElement>("[data-tree-grow]").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { clipPath: "inset(100% 0% 0% 0%)" },
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 2.8,
+          ease: "breath",
+          scrollTrigger: { trigger: el, start: "top 85%", once: true },
+        },
+      );
     });
 
     // ---------- Títulos ----------

@@ -7,9 +7,9 @@ export default function Header({ t }: { t: Content }) {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: "#trabalho", label: t.menu.trabalho },
-    { href: "#para-quem", label: t.menu.paraQuem },
+    { href: "#terapia", label: t.menu.terapia },
     { href: "#sobre-mim", label: t.menu.sobreMim },
+    { href: "#opinioes", label: t.menu.opinioes },
     { href: "#como-funciona", label: t.menu.comoFunciona },
   ];
 

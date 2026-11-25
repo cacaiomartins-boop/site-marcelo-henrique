@@ -4,8 +4,7 @@ import { initAnimations } from "./motion/animations";
 import { initLenis, ScrollTrigger } from "./motion/setup";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Trabalho from "./components/Trabalho";
-import ParaQuem from "./components/ParaQuem";
+import Terapia from "./components/Terapia";
 import SobreMim from "./components/SobreMim";
 import ComoFunciona from "./components/ComoFunciona";
 import Opinioes from "./components/Opinioes";
@@ -35,11 +34,10 @@ export default function App() {
       <Header t={t} />
       <main id="conteudo">
         <Hero t={t} />
-        <Trabalho t={t} />
-        <ParaQuem t={t} />
+        <Terapia t={t} />
         <SobreMim t={t} />
-        <ComoFunciona t={t} />
         <Opinioes t={t} />
+        <ComoFunciona t={t} />
       </main>
       <Rodape t={t} />
       <WhatsAppFloat />

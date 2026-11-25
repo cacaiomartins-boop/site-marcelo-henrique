@@ -1,6 +1,6 @@
 import { clinic, mensagens, whatsappUrl } from "../data/clinic";
 import type { Content } from "../data/content";
-import { Em, IconMail, IconWhatsApp } from "./ui";
+import { Em, IconMail, IconWhatsApp, WhatsAppButton } from "./ui";
 
 export default function Rodape({ t }: { t: Content }) {
   return (
@@ -25,7 +25,18 @@ export default function Rodape({ t }: { t: Content }) {
             <Em text={t.rodape.frase} />
           </h2>
 
-          <div data-reveal className="mt-12 flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16 lg:mt-[clamp(2rem,7svh,4.5rem)]">
+          <div data-reveal className="mt-8 lg:mt-[clamp(1.25rem,4svh,2.5rem)]">
+            <p className="font-serif text-[1.5rem] leading-tight text-ivory lg:text-[clamp(1.3rem,3.4svh,2rem)]">{clinic.nomeCompleto}</p>
+            <p className="mt-2 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-sand">{t.rodape.cargo}</p>
+          </div>
+
+          <div data-reveal className="mt-8">
+            <WhatsAppButton href={whatsappUrl(mensagens.contato)} className="!bg-ivory !text-teal-deep !shadow-none">
+              {t.botoes.contato}
+            </WhatsAppButton>
+          </div>
+
+          <div data-reveal className="mt-10 flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16 lg:mt-[clamp(1.5rem,5svh,3rem)]">
             <a
               href={whatsappUrl(mensagens.contato)}
               target="_blank"
@@ -56,12 +67,11 @@ export default function Rodape({ t }: { t: Content }) {
             <p className="text-[0.9rem] text-ivory/80">{t.rodape.emergencia}</p>
             <div className="mt-4 flex flex-col gap-2 text-[0.85rem] text-ivory/70 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
               <p>
-                {clinic.nomeCompleto} · {clinic.registro}{" "}
                 <a
                   href={clinic.registroLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="u-link mt-1 block text-ivory/90 sm:ml-1 sm:mt-0 sm:inline-block"
+                  className="u-link text-ivory/90"
                 >
                   Verificar registro
                   <span className="sr-only"> no {clinic.conselho} (abre em nova aba)</span>
