@@ -134,7 +134,7 @@ function animate(cleanups: Array<() => void>) {
           clipPath: "inset(0% 0% 0% 0%)",
           duration: 2.8,
           ease: "breath",
-          scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          scrollTrigger: { trigger: el, start: "top 95%", once: true },
         },
       );
     });
@@ -152,7 +152,7 @@ function animate(cleanups: Array<() => void>) {
             yPercent: 110,
             duration: 1.25,
             stagger: 0.1,
-            scrollTrigger: { trigger: el, start: "top 86%", once: true },
+            scrollTrigger: { trigger: el, start: "top 92%", once: true },
           });
         },
       });
@@ -163,7 +163,7 @@ function animate(cleanups: Array<() => void>) {
       gsap.fromTo(
         el,
         { autoAlpha: 0, y: 32 },
-        { autoAlpha: 1, y: 0, duration: 1.2, scrollTrigger: { trigger: el, start: "top 88%", once: true } },
+        { autoAlpha: 1, y: 0, duration: 1.2, scrollTrigger: { trigger: el, start: "top 97%", once: true } },
       );
     });
     gsap.utils.toArray<HTMLElement>("[data-stagger]").forEach((group) => {
@@ -176,7 +176,7 @@ function animate(cleanups: Array<() => void>) {
           y: 0,
           duration: 1.1,
           stagger: 0.09,
-          scrollTrigger: { trigger: group, start: "top 86%", once: true },
+          scrollTrigger: { trigger: group, start: "top 95%", once: true },
         },
       );
     });

@@ -212,7 +212,9 @@ html.lenis body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-block: clamp(4.5rem, 11svh, 7rem);
+      /* o topo precisa passar do cabeçalho fixo (~76 px) */
+      padding-top: clamp(5rem, 9svh, 6.5rem);
+      padding-bottom: clamp(2.25rem, 6svh, 5rem);
     }
   }
 

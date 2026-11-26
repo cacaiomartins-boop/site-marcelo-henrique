@@ -117,6 +117,20 @@ export const pt: Content = {
         ],
       },
       {
+        nome: "Alessandra",
+        data: "13 de janeiro de 2026",
+        texto: [
+          "Marcelo abriu meus olhos sobre terapia! Me sinto muito livre para falar sobre minhas questões desde a primeira consulta, ele é ótimo!",
+        ],
+      },
+      {
+        nome: "Luiz Felipe Lazzarotto",
+        data: "8 de julho de 2025",
+        texto: [
+          "O Marcelo é um psicólogo maravilhoso pra mim, me ajuda muito! Fiquei 8 anos fazendo psicanálise e mudar para a linha da Fenomenologia com ele foi uma grata e transformadora surpresa. Agradeço e indico muitíssimo o Marcelo por sua competência, profissionalismo e sensibilidade ímpares :)",
+        ],
+      },
+      {
         nome: "Gabriel Rocha",
         data: "5 de junho de 2026",
         texto: [
@@ -142,13 +156,6 @@ export const pt: Content = {
         ],
       },
       {
-        nome: "Alessandra",
-        data: "13 de janeiro de 2026",
-        texto: [
-          "Marcelo abriu meus olhos sobre terapia! Me sinto muito livre para falar sobre minhas questões desde a primeira consulta, ele é ótimo!",
-        ],
-      },
-      {
         nome: "V.F.S",
         data: "8 de agosto de 2025",
         texto: [
@@ -165,13 +172,6 @@ export const pt: Content = {
           "Nossas consultas pulam para fora do espectro de uma simples conversa, mas pairam dentro da construção um espaço de aprendizado, questionamento, reflexão, auto conhecimento, crescimento mental, profissional e intelectual.",
           "Neste espaço falamos e questionamos sobre todos meus aspectos individuais, como TDAH, Dislexia, bissexualidade, traumas familiares e de infância, ansiedades, medos, problemas familiares, problemas profissionais etc... Enfim, me sinto livre pra conversar sobre como me sinto e o por que me sinto de tal forma.",
           "Ele vem me auxiliando a enxergar as diversas perspectivas da vida em diferentes expertos, do mais simples ao mais complexo, abordando as diferentes historias pelas quais passo e passei, para poder enxergar a vida de uma forma mais linda.",
-        ],
-      },
-      {
-        nome: "Luiz Felipe Lazzarotto",
-        data: "8 de julho de 2025",
-        texto: [
-          "O Marcelo é um psicólogo maravilhoso pra mim, me ajuda muito! Fiquei 8 anos fazendo psicanálise e mudar para a linha da Fenomenologia com ele foi uma grata e transformadora surpresa. Agradeço e indico muitíssimo o Marcelo por sua competência, profissionalismo e sensibilidade ímpares :)",
         ],
       },
       {

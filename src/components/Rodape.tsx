@@ -17,7 +17,7 @@ export default function Rodape({ t }: { t: Content }) {
           className="tree pointer-events-none absolute bottom-0 right-0 -z-10 -scale-x-100 text-ivory opacity-[0.12] [--h:22rem] lg:[--h:min(92svh,60vw)]"
         />
 
-        <div className="container-site pt-24 lg:pt-[clamp(6rem,14svh,9rem)]">
+        <div className="container-site pt-24 lg:pt-[clamp(5.5rem,11svh,9rem)]">
           <h2
             data-split
             className="max-w-[16ch] text-[clamp(2.3rem,8vw,3.4rem)] leading-[1.04] !text-ivory lg:max-w-[18ch] lg:text-[clamp(2.4rem,min(5vw,8svh),4.75rem)] [&_em]:!text-sand"
@@ -25,7 +25,7 @@ export default function Rodape({ t }: { t: Content }) {
             <Em text={t.rodape.frase} />
           </h2>
 
-          <div data-reveal className="mt-8 lg:mt-[clamp(1.25rem,4svh,2.5rem)]">
+          <div data-reveal className="mt-8 lg:mt-[clamp(0.9rem,3svh,2.5rem)]">
             <p className="font-serif text-[1.5rem] leading-tight text-ivory lg:text-[clamp(1.3rem,3.4svh,2rem)]">{clinic.nomeCompleto}</p>
             <p className="mt-2 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-sand">{t.rodape.cargo}</p>
           </div>
@@ -36,7 +36,7 @@ export default function Rodape({ t }: { t: Content }) {
             </WhatsAppButton>
           </div>
 
-          <div data-reveal className="mt-10 flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16 lg:mt-[clamp(1.5rem,5svh,3rem)]">
+          <div data-reveal className="mt-10 flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:gap-x-16 lg:mt-[clamp(1rem,3.5svh,3rem)]">
             <a
               href={whatsappUrl(mensagens.contato)}
               target="_blank"
