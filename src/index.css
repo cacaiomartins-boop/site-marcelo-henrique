@@ -92,11 +92,20 @@ html.lenis body {
   align-items: center;
   text-align: center;
 }
+/* A imagem da árvore é só a metade direita; espelhada ao lado, forma a árvore inteira */
+.js-intro .intro-arvore {
+  --h: min(44svh, 19rem, 54vw);
+  display: flex;
+  justify-content: center;
+}
 .js-intro .intro-tree {
-  --h: min(44svh, 19rem);
   height: var(--h);
   width: calc(var(--h) * 0.7603);
   clip-path: inset(100% 0 0 0);
+}
+.js-intro .intro-espelho {
+  transform: scaleX(-1);
+  margin-right: -1px;
 }
 .js-intro .intro-nome {
   margin-top: 1.75rem;
