@@ -11,12 +11,11 @@
         document.documentElement.classList.remove("js-motion");
         document.documentElement.classList.remove("js-intro");
       }, 4500);
-      // Tela de abertura: só na primeira visita (?intro=1 força, para testar).
+      // Tela de abertura: aparece sempre que o site abre (?intro=0 desliga, para testar).
       (function () {
         try {
           var q = location.search;
-          var visto = localStorage.getItem("intro-visto") === "1";
-          if (!visto || q.indexOf("intro=1") >= 0) document.documentElement.classList.add("js-intro");
+          if (q.indexOf("intro=0") < 0) document.documentElement.classList.add("js-intro");
         } catch (e) {}
       })();
     </script>
