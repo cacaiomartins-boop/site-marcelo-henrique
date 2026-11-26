@@ -76,7 +76,7 @@ function playIntro(cleanups: Array<() => void>): number {
   tl.to(".intro-tree", { clipPath: "inset(0% 0% 0% 0%)", duration: 1.7, ease: "breath" }, 0.15);
   tl.fromTo(".intro-nome", { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 1 }, 0.9);
   tl.fromTo(".intro-sub", { autoAlpha: 0, y: 8 }, { autoAlpha: 0.7, y: 0, duration: 1 }, 1.1);
-  tl.to(".intro-inner", { autoAlpha: 0, y: -14, duration: 0.6, ease: "power2.in" }, 2.5);
+  tl.to(".intro-inner", { autoAlpha: 0, duration: 0.6, ease: "power2.in" }, 2.5);
   tl.to(el, { yPercent: -100, duration: 1, ease: "power3.inOut" }, 2.8);
   (window as unknown as { __introTl?: gsap.core.Timeline }).__introTl = tl;
   // Só para a animação; a classe js-intro permanece, para o React (modo dev) poder reiniciar a abertura.

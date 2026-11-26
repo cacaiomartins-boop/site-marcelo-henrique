@@ -73,52 +73,61 @@ html.lenis body {
   overscroll-behavior: contain;
 }
 
-/* Tela de abertura (só na primeira visita; o JS controla a animação) */
+/* Tela de abertura (aparece sempre que o site abre; o JS controla a animação) */
 #intro {
   display: none;
 }
 .js-intro #intro {
+  display: block;
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: grid;
-  place-items: center;
   background: #f4efe0;
   color: #294e59;
+  overflow: hidden;
+}
+/* A árvore sai da borda da tela (como no site) e cresce de baixo para cima */
+.js-intro .intro-tree {
+  --h: min(52svh, 92vw);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: var(--h);
+  width: calc(var(--h) * 0.7603);
+  clip-path: inset(100% 0 0 0);
 }
 .js-intro .intro-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 22%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-/* A imagem da árvore é só a metade direita; espelhada ao lado, forma a árvore inteira */
-.js-intro .intro-arvore {
-  --h: min(44svh, 19rem, 54vw);
-  display: flex;
-  justify-content: center;
-}
-.js-intro .intro-tree {
-  height: var(--h);
-  width: calc(var(--h) * 0.7603);
-  clip-path: inset(100% 0 0 0);
-}
-.js-intro .intro-espelho {
-  transform: scaleX(-1);
-  margin-right: -1px;
+@media (min-width: 900px) {
+  .js-intro .intro-tree {
+    --h: min(84svh, 56vw);
+  }
+  .js-intro .intro-inner {
+    left: 46%;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .js-intro .intro-nome {
-  margin-top: 1.75rem;
-  font-family: "Source Serif 4 Variable", serif;
-  font-size: 1.15rem;
+  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.9rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   opacity: 0;
 }
 .js-intro .intro-sub {
-  margin-top: 0.6rem;
-  font-family: "Montserrat Variable", sans-serif;
-  font-size: 0.62rem;
+  margin-top: 0.8rem;
+  font-family: "Montserrat Variable", system-ui, sans-serif;
+  font-size: 0.66rem;
   font-weight: 500;
   letter-spacing: 0.34em;
   text-transform: uppercase;
