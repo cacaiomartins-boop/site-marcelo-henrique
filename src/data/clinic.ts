@@ -18,8 +18,8 @@ export const clinic = {
 
   doctoralia: "https://www.doctoralia.com.br/perfil/marcelo-henrique-de-oliveira-3",
 
-  // TODO: trocar pelo endereço final do site quando houver domínio (usado em canonical e Open Graph)
-  siteUrl: "",
+  // Endereço final do site (o mesmo do canonical e do Open Graph no index.html)
+  siteUrl: "https://www.marcelohenriqueoliveira.com.br",
 
   // Atendimento 100% on-line. Sem endereço, sem mapa.
   online: true,

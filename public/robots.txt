@@ -1,0 +1,5 @@
+# Todos os robôs (inclusive os de busca de IA) podem rastrear o site inteiro.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.marcelohenriqueoliveira.com.br/sitemap.xml
